@@ -8,19 +8,19 @@ import Table from '@/views/tableandform/Table.vue'
 import Form from '@/views/tableandform/Form.vue'
 import User from '@/views/tableandform/user.vue'
 
-import MockTest from '@/views/mock/mock.vue'
-
 import Component from '@/views/c-d-f/Component.vue'
 import Directive from '@/views/c-d-f/Directive.vue'
 import Filter from '@/views/c-d-f/Filter.vue'
 
 import State from '@/views/statemanage/State.vue'
 
-// import Page4 from '@/views/nav2/Page4.vue'
-// import Page42 from '@/views/nav2/Page4-2.vue'
-// import Page5 from '@/views/nav2/Page5.vue'
-// import Page6 from '@/views/nav3/Page6.vue'
-import echarts from '@/views/charts/echarts.vue'
+import Game from '@/views/other/Game.vue'
+import NextTick from '@/views/other/NextTick.vue'
+import DoubleBind from '@/views/other/DoubleBind.vue'
+// import Vbind from '@/views/other/Vbind.vue'
+
+// import MockTest from '@/views/mock/mock.vue'
+// import echarts from '@/views/charts/echarts.vue'
 
 let routes = [
   // {
@@ -43,10 +43,10 @@ let routes = [
     iconCls: 'el-icon-message', // 图标样式class
     children: [
       { path: '/index', component: Index, name: 'Index', menuName: '首页', hidden: true },
-      { path: '/table', component: Table, name: 'Table', menuName: '增删改查'},
+      { path: '/table', component: Table, name: 'Table', menuName: '增删改查' },
       // { path: '/mock', component: MockTest, name: 'MockTest', menuName: 'mock基础'},
-      { path: '/form', component: Form, name: 'Form', menuName: '表单演示'},
-      { path: '/user', component: User, name: 'User', menuName: '列表分页'}
+      { path: '/form', component: Form, name: 'Form', menuName: '表单演示' },
+      { path: '/user', component: User, name: 'User', menuName: '列表分页' }
     ]
   },
   {
@@ -70,6 +70,20 @@ let routes = [
     leaf: true, // 只有一个节点
     children: [
       { path: '/state', component: State, name: 'State', menuName: '状态管理' }
+    ]
+  },
+  {
+    path: '/',
+    name: '',
+    menuName: '其他',
+    component: Layout,
+    iconCls: 'fa fa-address-card',
+    leaf: false, // 只有一个节点
+    children: [
+      { path: '/game', component: Game, name: 'Game', menuName: '数组小游戏' },
+      { path: '/nexttick', component: NextTick, name: 'NextTick', menuName: 'NextTick' },
+      { path: '/doublebind', component: DoubleBind, name: 'DoubleBind', menuName: '双向绑定实现' },
+      // { path: '/vbind', component: Vbind, name: 'Vbind', menuName: 'vue自实现demo' }
     ]
   },
   {
